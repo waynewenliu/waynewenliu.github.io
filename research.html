@@ -75,12 +75,21 @@
             margin-bottom: 25px;
         }
 
+        /* 修改了这里，以支持链接样式 */
         .paper-title {
             display: block;
             font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 5px;
             color: var(--text);
+            text-decoration: none; /* 去掉下划线 */
+            transition: color 0.3s;
+        }
+        
+        /* 如果是链接，鼠标悬停时变色 */
+        a.paper-title:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         .paper-meta {
@@ -97,6 +106,7 @@
             text-decoration: none;
             font-size: 0.8em;
             margin-top: 5px;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -123,7 +133,6 @@
     </button>
 
     <div class="container">
-        <!-- Navigation -->
         <nav>
             <a href="index.html">Home</a>
             <a href="research.html" class="active">Research</a>
@@ -137,8 +146,10 @@
             <h2 class="lang-zh hidden">发表论文</h2>
             <ul class="paper-list">
                 <li>
-                    <span class="paper-title">Lost in Translation: Dialect Distance, Social Assimilation and Immigrant
-                        Crimes in China</span>
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1043951X25000689" target="_blank" class="paper-title">
+                        Lost in Translation: Dialect Distance, Social Assimilation and Immigrant Crimes in China
+                    </a>
+                    
                     <div class="paper-meta">
                         <span class="lang-en">with Zhicheng Xu. <strong>China Economic Review</strong>, 91, 102410
                             (2025).</span>
@@ -171,14 +182,7 @@
                         <span class="lang-zh hidden">合作者：薄诗雨, 李梦豪, 李婷婷。(<strong>Under Review</strong>)</span>
                     </div>
                 </li>
-                <li>
-                    <span class="paper-title">Fishing for Fines: Local Government Fiscal Stress and Cross-Jurisdictional
-                        Enforcement in China</span>
-                    <div class="paper-meta">
-                        <span class="lang-en">with Shiyu Bo.</span>
-                        <span class="lang-zh hidden">合作者：薄诗雨。</span>
-                    </div>
-                </li>
+                
             </ul>
         </section>
 
@@ -220,18 +224,32 @@
             <h2 class="lang-zh hidden">学术会议</h2>
             <ul class="paper-list">
                 <li>
-                    <div class="paper-meta"><strong>2025.10</strong> The 11th Xiangzhang Economics English Forum
-                        (Guangdong University of Foreign Studies, Shenzhen Qianhai)</div>
+                    <div class="paper-meta">
+                        <strong>2025.10</strong> 
+                        <span class="lang-en">The 11th Xiangzhang Economics English Forum (Guangdong University of Foreign Studies, Shenzhen Qianhai)</span>
+                        <span class="lang-zh hidden">第十一届香樟经济学英文论坛（广东外语外贸大学，深圳前海）</span>
+                    </div>
                 </li>
                 <li>
-                    <div class="paper-meta"><strong>2025.07</strong> The 11th Quantitative History Workshop</div>
+                    <div class="paper-meta">
+                        <strong>2025.07</strong> 
+                        <span class="lang-en">The 11th Quantitative History Workshop</span>
+                        <span class="lang-zh hidden">第十一届量化历史讲习班</span>
+                    </div>
                 </li>
                 <li>
-                    <div class="paper-meta"><strong>2022.12</strong> Asian and Australasian Society of Labour Economics
-                        2022 Conference</div>
+                    <div class="paper-meta">
+                        <strong>2022.12</strong> 
+                        <span class="lang-en">Asian and Australasian Society of Labour Economics 2022 Conference</span>
+                        <span class="lang-zh hidden">2022年亚洲与大洋洲劳动经济学会 (AASLE) 年会</span>
+                    </div>
                 </li>
                 <li>
-                    <div class="paper-meta"><strong>2022.12</strong> China Economics Annual Conference</div>
+                    <div class="paper-meta">
+                        <strong>2022.12</strong> 
+                        <span class="lang-en">China Economics Annual Conference</span>
+                        <span class="lang-zh hidden">中国经济学年会</span>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -246,6 +264,5 @@
         }
     </script>
 </body>
-
 
 </html>
