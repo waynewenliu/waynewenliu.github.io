@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Liu (刘文)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #ffffff;
+            --text: #333333;
+            --gray: #7f8c8d;
+            --light-gray: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            color: var(--primary);
+        }
+
+        .header-content p {
+            margin: 5px 0;
+            color: var(--gray);
+        }
+
+        /* Social links removed from header as requested */
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2em;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .education-item .details {
+            font-weight: bold;
+        }
+
+        .education-item .date {
+            color: var(--gray);
+            font-size: 0.9em;
+        }
+
+        .sub-details {
+            color: var(--gray);
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .education-item {
+                flex-direction: column;
+            }
+
+            .education-item .date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn lang-switch" onclick="toggleLang()">
+        <span class="lang-en">中文</span>
+        <span class="lang-zh hidden">English</span>
+    </button>
+    <div class="container">
+        <!-- Navigation -->
+        <nav style="text-align: right; margin-bottom: 20px;">
+            <a href="index.html"
+                style="text-decoration: none; color: var(--primary); font-weight: bold; margin-right: 15px;">Home</a>
+            <a href="research.html"
+                style="text-decoration: none; color: var(--primary); margin-right: 15px;">Research</a>
+        </nav>
+
+        <header>
+            <img src="assets/myphoto.jpg" alt="Wen Liu" class="profile-img">
+            <div class="header-content">
+                <h1 class="lang-en">Wen Liu</h1>
+                <h1 class="lang-zh hidden">刘文</h1>
+
+                <p><a href="mailto:waynewenliu@gmail.com"
+                        style="color: var(--primary); text-decoration: none;">waynewenliu@gmail.com</a></p>
+
+                <p class="lang-en">Ph.D. Candidate in Economics</p>
+                <p class="lang-zh hidden">经济学博士候选人</p>
+
+                <p class="lang-en">Institute for Economic and Social Research (IESR), Jinan University</p>
+                <p class="lang-zh hidden">暨南大学 经济与社会研究院 (IESR)</p>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2 class="lang-en">About Me</h2>
+            <h2 class="lang-zh hidden">关于我</h2>
+            <div class="lang-en">
+                <p>My research interests lie in <strong>Development Economics</strong>, <strong>Health
+                        Economics</strong>, and <strong>Law and Economics</strong>. I primarily focus on topics such as
+                    judicial behavior under institutional and policy shocks, as well as doctor-patient disputes and
+                    their social consequences.</p>
+
+                <div style="margin-top: 25px;">
+                    <a href="assets/main_en.pdf" class="btn" target="_blank"><i class="fas fa-file-pdf"></i> Download CV
+                        (English)</a>
+                    <a href="assets/main.pdf" class="btn" target="_blank"><i class="fas fa-file-pdf"></i> Download CV
+                        (Chinese)</a>
+                </div>
+            </div>
+            <div class="lang-zh hidden">
+                <p>研究领域涵盖<strong>发展经济学</strong>、<strong>健康经济学</strong>与<strong>法与经济学</strong>，主要关注制度与政策冲击下的司法行为、医患纠纷与社会后果等议题。
+                </p>
+
+                <div style="margin-top: 25px;">
+                    <a href="assets/main.pdf" class="btn" target="_blank"><i class="fas fa-file-pdf"></i> 下载中文简历</a>
+                    <a href="assets/main_en.pdf" class="btn" target="_blank"><i class="fas fa-file-pdf"></i> 下载英文简历</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests">
+            <h2 class="lang-en">Research Interests</h2>
+            <h2 class="lang-zh hidden">研究领域</h2>
+            <div class="lang-en">
+                <p>Development Economics, Health Economics, Law and Economics</p>
+            </div>
+            <div class="lang-zh hidden">
+                <p>发展经济学、健康经济学、法与经济学</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="lang-en">Education</h2>
+            <h2 class="lang-zh hidden">教育背景</h2>
+
+            <div class="education-item">
+                <div class="details">
+                    <span class="lang-en">Ph.D. in Regional Economics</span>
+                    <span class="lang-zh hidden">区域经济学 博士</span>
+                    <div class="sub-details">
+                        <span class="lang-en">Jinan University (IESR)</span>
+                        <span class="lang-zh hidden">暨南大学 (IESR)</span>
+                    </div>
+                </div>
+                <div class="date">2023.09 - 2026.06 (Exp)</div>
+            </div>
+
+            <div class="education-item">
+                <div class="details">
+                    <span class="lang-en">M.A. in Applied Economics</span>
+                    <span class="lang-zh hidden">应用经济学 硕士</span>
+                    <div class="sub-details">
+                        <span class="lang-en">Henan University</span>
+                        <span class="lang-zh hidden">河南大学</span>
+                    </div>
+                </div>
+                <div class="date">2020.09 - 2023.06</div>
+            </div>
+
+            <div class="education-item">
+                <div class="details">
+                    <span class="lang-en">B.E. in Energy and Power Engineering</span>
+                    <span class="lang-zh hidden">能源与动力工程 学士</span>
+                    <div class="sub-details">
+                        <span class="lang-en">China University of Petroleum (East China)</span>
+                        <span class="lang-zh hidden">中国石油大学（华东）</span>
+                    </div>
+                </div>
+                <div class="date">2014.09 - 2018.06</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleLang() {
+            const ens = document.querySelectorAll('.lang-en');
+            const zhs = document.querySelectorAll('.lang-zh');
+            ens.forEach(el => el.classList.toggle('hidden'));
+            zhs.forEach(el => el.classList.toggle('hidden'));
+        }
+    </script>
+</body>
+
+</html>

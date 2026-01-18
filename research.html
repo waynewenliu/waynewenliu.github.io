@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Wen Liu (刘文)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #ffffff;
+            --text: #333333;
+            --gray: #7f8c8d;
+            --light-gray: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        nav {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        nav a.active {
+            color: var(--accent);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2em;
+            margin-top: 40px;
+        }
+
+        .paper-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .paper-list li {
+            margin-bottom: 25px;
+        }
+
+        .paper-title {
+            display: block;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .paper-meta {
+            color: var(--gray);
+            font-size: 0.95em;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn lang-switch" onclick="toggleLang()">
+        <span class="lang-en">中文</span>
+        <span class="lang-zh hidden">English</span>
+    </button>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="research.html" class="active">Research</a>
+        </nav>
+
+        <h1 class="lang-en">Research</h1>
+        <h1 class="lang-zh hidden">科学研究</h1>
+
+        <section>
+            <h2 class="lang-en">Publications</h2>
+            <h2 class="lang-zh hidden">发表论文</h2>
+            <ul class="paper-list">
+                <li>
+                    <span class="paper-title">Lost in Translation: Dialect Distance, Social Assimilation and Immigrant
+                        Crimes in China</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Zhicheng Xu. <strong>China Economic Review</strong>, 91, 102410
+                            (2025).</span>
+                        <span class="lang-zh hidden">合作者：许志成。<strong>China Economic Review</strong>, 91, 102410
+                            (2025).</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="lang-en">Working Papers</h2>
+            <h2 class="lang-zh hidden">工作论文</h2>
+            <ul class="paper-list">
+                <li>
+                    <span class="paper-title">From Trade Protectionism to Legal Protectionism: How the Trump Trade War
+                        Harms US Firms in China</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Shiyu Bo. (<strong>R&R, Journal of Development
+                                Economics</strong>)</span>
+                        <span class="lang-zh hidden">合作者：薄诗雨。(<strong>R&R, Journal of Development
+                                Economics</strong>)</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="paper-title">Investing in Patient Knowledge: The Effect of Health Literacy on Medical
+                        Litigation</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Menghao Li and Shiyu Bo. (<strong>Under Review, Journal of Health
+                                Economics</strong>)</span>
+                        <span class="lang-zh hidden">合作者：李梦豪, 薄诗雨。(<strong>Under Review, Journal of Health
+                                Economics</strong>)</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="paper-title">Fishing for Fines: Local Government Fiscal Stress and Cross-Jurisdictional
+                        Enforcement in China</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Shiyu Bo.</span>
+                        <span class="lang-zh hidden">合作者：薄诗雨。</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="lang-en">Work in Progress</h2>
+            <h2 class="lang-zh hidden">正在进行的研究</h2>
+            <ul class="paper-list">
+                <li>
+                    <span class="paper-title">Procurement as Defensive Practice: Litigation Risk and Hospital Behavior
+                        in China</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Shiyu Bo, Yaxuan Mei, and Zichen Wang.</span>
+                        <span class="lang-zh hidden">合作者：薄诗雨, 梅雅轩, 王子辰。</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="paper-title">Erasing Borders to Erase Crime? Evidence from China's Jurisdictional
+                        Consolidation</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Shiyu Bo and Yi Wang.</span>
+                        <span class="lang-zh hidden">合作者：薄诗雨, 王艺。</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="paper-title">Housing Downturns and Urban Crime in China</span>
+                    <div class="paper-meta">
+                        <span class="lang-en">with Xiaohao Huang.</span>
+                        <span class="lang-zh hidden">合作者：黄晓昊。</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="lang-zh hidden">
+            <h2>未来研究计划</h2>
+            <ul class="paper-list">
+                <li>继续关注地方政府治理、公共政策的微观影响。</li>
+                <li>深入探究司法体制改革与经济发展的互动关系。</li>
+                <li>结合人口老龄化现状，探索医疗体制改革、医患关系等医疗健康领域。</li>
+                <li>结合LLM、机器学习、文本分析等方法，从大数据中挖掘经济行为。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="lang-en">Selected Presentations</h2>
+            <h2 class="lang-zh hidden">主要学术报告</h2>
+            <ul class="paper-list">
+                <li>
+                    <div class="paper-meta"><strong>2025.10</strong> The 11th Xiangzhang Economics English Forum
+                        (Guangdong University of Foreign Studies, Shenzhen Qianhai)</div>
+                </li>
+                <li>
+                    <div class="paper-meta"><strong>2025.07</strong> The 11th Quantitative History Workshop</div>
+                </li>
+                <li>
+                    <div class="paper-meta"><strong>2022.12</strong> Asian and Australasian Society of Labour Economics
+                        2022 Conference</div>
+                </li>
+                <li>
+                    <div class="paper-meta"><strong>2022.12</strong> China Economics Annual Conference</div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function toggleLang() {
+            const ens = document.querySelectorAll('.lang-en');
+            const zhs = document.querySelectorAll('.lang-zh');
+            ens.forEach(el => el.classList.toggle('hidden'));
+            zhs.forEach(el => el.classList.toggle('hidden'));
+        }
+    </script>
+</body>
+
+</html>

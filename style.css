@@ -1,0 +1,337 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #5d6d7e;
+    --accent-color: #2980b9;
+    --text-color: #2c3e50;
+    --bg-color: #fdfdfd;
+    --sidebar-bg: #f8f9fa;
+    --border-color: #eaeaea;
+
+    /* New Fonts */
+    --font-heading: 'Lato', sans-serif;
+    --font-body: 'Merriweather', serif;
+    --font-cn: 'Noto Serif SC', serif;
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Noto+Serif+SC:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.7;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Chinese Text Override */
+:lang(zh-CN) body {
+    font-family: var(--font-cn), var(--font-body);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* Language Toggle in Nav */
+.nav-toggle {
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Layout */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent;
+    box-shadow: none;
+    /* Removed box shadow for cleaner look */
+    flex: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Sidebar (Only for Home page mainly) */
+.sidebar {
+    width: 280px;
+    padding-right: 40px;
+    border-right: 1px solid var(--border-color);
+    text-align: left;
+    /* Changed alignment */
+    background: transparent;
+    /* Removed bg color */
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 200px;
+    height: 200px;
+    /* Slight increase */
+    border-radius: 4px;
+    /* Soft square instead of circle */
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.name .lang-zh {
+    font-weight: 400;
+    /* Chinese font is heavy enough */
+}
+
+.role {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.affiliation {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.contact-links a {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.contact-links i {
+    width: 20px;
+    text-align: left;
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding-left: 40px;
+    background-color: transparent;
+}
+
+/* Full width content (for Research page) */
+.full-width {
+    width: 100%;
+    padding: 0;
+}
+
+@media (max-width: 860px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 40px;
+    }
+
+    .profile-photo img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .main-content {
+        padding-left: 0;
+    }
+
+    .contact-links i {
+        text-align: center;
+    }
+}
+
+h2,
+h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    border-bottom: 2px solid #f0f0f0;
+    /* Softer border */
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+    color: #444;
+}
+
+/* Lists */
+.paper-list li {
+    margin-bottom: 25px;
+    /* More space */
+    padding-left: 0;
+    /* Align left */
+}
+
+.paper-list li::before {
+    content: none;
+}
+
+/* Remove bullet */
+
+.paper-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.simple-list li {
+    margin-bottom: 15px;
+}
+
+.simple-list .date {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    font-weight: 400;
+    min-width: 140px;
+    /* Wider for full dates */
+}
+
+/* Items */
+.item {
+    margin-bottom: 30px;
+}
+
+.item-header {
+    margin-bottom: 8px;
+}
+
+.item .title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.item .date {
+    font-family: var(--font-heading);
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+}
