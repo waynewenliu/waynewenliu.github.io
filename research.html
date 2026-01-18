@@ -75,18 +75,16 @@
             margin-bottom: 25px;
         }
 
-        /* 修改了这里，以支持链接样式 */
         .paper-title {
             display: block;
             font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 5px;
             color: var(--text);
-            text-decoration: none; /* 去掉下划线 */
+            text-decoration: none;
             transition: color 0.3s;
         }
-        
-        /* 如果是链接，鼠标悬停时变色 */
+
         a.paper-title:hover {
             color: var(--accent);
             text-decoration: underline;
@@ -95,6 +93,7 @@
         .paper-meta {
             color: var(--gray);
             font-size: 0.95em;
+            margin-bottom: 5px; /* Add slight spacing before abstract toggle */
         }
 
         .btn {
@@ -122,6 +121,33 @@
             position: absolute;
             top: 20px;
             right: 20px;
+        }
+
+        /* --- 新增：摘要相关的样式 --- */
+        .abstract-toggle {
+            font-size: 0.9em;
+            color: var(--accent);
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 500;
+            margin-top: 2px;
+            user-select: none; /* 防止点击时选中文本 */
+        }
+
+        .abstract-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .abstract-content {
+            display: none; /* 默认隐藏 */
+            background-color: #f5f5f5; /* 浅灰色背景 */
+            padding: 15px;
+            margin-top: 8px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #444;
+            line-height: 1.5;
+            text-align: justify; /* 文本两端对齐 */
         }
     </style>
 </head>
@@ -151,10 +177,21 @@
                     </a>
                     
                     <div class="paper-meta">
-                        <span class="lang-en">with Zhicheng Xu. <strong>China Economic Review</strong>, 91, 102410
-                            (2025). <strong>(First Author)</strong> </span>
-                        <span class="lang-zh hidden">合作者：许志成。<strong>China Economic Review</strong>, 91, 102410
-                            (2025).<strong>(第一作者)</strong> </span>
+                        <span class="lang-en">with Zhicheng Xu. <strong>China Economic Review</strong>, 91, 102410 (2025). <strong>(First Author)</strong> </span>
+                        <span class="lang-zh hidden">合作者：许志成。<strong>China Economic Review</strong>, 91, 102410 (2025).<strong>(第一作者)</strong> </span>
+                    </div>
+
+                    <span class="abstract-toggle" onclick="toggleAbstract(this)">
+                        <span class="lang-en">[+] Abstract</span>
+                        <span class="lang-zh hidden">[+] 摘要</span>
+                    </span>
+                    <div class="abstract-content">
+                        <p class="lang-en">
+                            <strong>Abstract:</strong> This study offers a novel perspective on migrant crime by focusing on internal migration within China, distinguishing it from the predominant literature that examines international migration. Using a large dataset of over 6 million criminal convictions during 2000–2020, we document the significantly positive link between the cultural barrier proxied by dialectal distances and the criminal behaviors among immigrants under the dyadic specification. This effect is particularly pronounced among migrants with lower educational attainment and male migrants. We employ a series of robustness checks and instrumental variable estimations, confirming the causality. Furthermore, we identify the underlying mechanism, showing that the impact of dialectal distance on crime is driven primarily by challenges in social assimilation and a weak sense of local identity, rather than factors such as immigrant population size or dialect communication barriers. These findings highlight the crucial role of fostering an inclusive pro-immigrant culture and supportive policies to reduce crime. Our study emphasizes the need to address cultural barriers and enhance social integration to mitigate criminal behavior among immigrant workers in China.
+                        </p>
+                        <p class="lang-zh hidden">
+                            <strong>Abstract：</strong> This study offers a novel perspective on migrant crime by focusing on internal migration within China, distinguishing it from the predominant literature that examines international migration. Using a large dataset of over 6 million criminal convictions during 2000–2020, we document the significantly positive link between the cultural barrier proxied by dialectal distances and the criminal behaviors among immigrants under the dyadic specification. This effect is particularly pronounced among migrants with lower educational attainment and male migrants. We employ a series of robustness checks and instrumental variable estimations, confirming the causality. Furthermore, we identify the underlying mechanism, showing that the impact of dialectal distance on crime is driven primarily by challenges in social assimilation and a weak sense of local identity, rather than factors such as immigrant population size or dialect communication barriers. These findings highlight the crucial role of fostering an inclusive pro-immigrant culture and supportive policies to reduce crime. Our study emphasizes the need to address cultural barriers and enhance social integration to mitigate criminal behavior among immigrant workers in China.
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -165,24 +202,64 @@
             <h2 class="lang-zh hidden">工作论文</h2>
             <ul class="paper-list">
                 <li>
-                    <span class="paper-title">From Trade Protectionism to Legal Protectionism: How the Trump Trade War
-                        Harms US Firms in China</span>
+                    <span class="paper-title">From Trade Protectionism to Legal Protectionism: How the Trump Trade War Harms US Firms in China</span>
                     <div class="paper-meta">
-                        <span class="lang-en">with Shiyu Bo. (<strong>R&R, Journal of Development
-                                Economics</strong>)</span>
-                        <span class="lang-zh hidden">合作者：薄诗雨。(<strong>R&R, Journal of Development
-                                Economics</strong>)</span>
+                        <span class="lang-en">with Shiyu Bo. (<strong>R&R, Journal of Development Economics</strong>)</span>
+                        <span class="lang-zh hidden">合作者：薄诗雨。(<strong>R&R, Journal of Development Economics</strong>)</span>
+                    </div>
+
+                    <span class="abstract-toggle" onclick="toggleAbstract(this)">
+                        <span class="lang-en">[+] Abstract</span>
+                        <span class="lang-zh hidden">[+] 摘要</span>
+                    </span>
+                    <div class="abstract-content">
+                        <p class="lang-en">
+                            <strong>Abstract:</strong> This study examines an unintended consequence of trade protectionism on US firms resulting from ‘the Trump trade war.’ Using the universe of all civil verdicts containing one million firm-to-firm cases in China from 2014 to 2020, we employ a triple-difference approach to identify the trade war’s causal impact on judicial outcomes. Our findings reveal
+a significant decline in win rates for US plaintiffs suing Chinese defendants in cities more exposed to tariff shocks, while cases initiated by Chinese or non-US foreign plaintiffs remain unaffected. These results are robust to comparing highly similar cases constructed via
+an NLP algorithm and accounting for nonrandom disclosure. Meanwhile, we find declines in trial quality, suggesting a judicial bias favoring domestic firms, instead of a correction
+of privileges previously granted to US firms. Mechanism analysis indicates that this bias
+stems from shifts in judges’ attitudes, primarily driven by pressures from citizen rather
+than government capture.
+                        </p>
+                        <p class="lang-zh hidden">
+                            <strong>Abstract:</strong> This study examines an unintended consequence of trade protectionism on US firms resulting from ‘the Trump trade war.’ Using the universe of all civil verdicts containing one million firm-to-firm cases in China from 2014 to 2020, we employ a triple-difference approach to identify the trade war’s causal impact on judicial outcomes. Our findings reveal
+a significant decline in win rates for US plaintiffs suing Chinese defendants in cities more exposed to tariff shocks, while cases initiated by Chinese or non-US foreign plaintiffs remain unaffected. These results are robust to comparing highly similar cases constructed via
+an NLP algorithm and accounting for nonrandom disclosure. Meanwhile, we find declines in trial quality, suggesting a judicial bias favoring domestic firms, instead of a correction
+of privileges previously granted to US firms. Mechanism analysis indicates that this bias
+stems from shifts in judges’ attitudes, primarily driven by pressures from citizen rather
+than government capture.
+                        </p>
                     </div>
                 </li>
+
                 <li>
-                    <span class="paper-title">Investing in Patient Knowledge: The Effect of Health Literacy on Medical
-                        Litigation</span>
+                    <span class="paper-title">Investing in Patient Knowledge: The Effect of Health Literacy on Medical Litigation</span>
                     <div class="paper-meta">
                         <span class="lang-en">with Shiyu Bo, Menghao Li, and Tingting Li. (<strong>Under Review</strong>)</span>
                         <span class="lang-zh hidden">合作者：薄诗雨, 李梦豪, 李婷婷。(<strong>Under Review</strong>)</span>
                     </div>
+
+                    <span class="abstract-toggle" onclick="toggleAbstract(this)">
+                        <span class="lang-en">[+] Abstract</span>
+                        <span class="lang-zh hidden">[+] 摘要</span>
+                    </span>
+                    <div class="abstract-content">
+                        <p class="lang-en">
+                            <strong>Abstract:</strong> Medical malpractice litigation imposes substantial economic and social costs. We ask whether
+a demand-side investment in patient health literacy can mitigate this conflict. Exploiting
+China’s staggered rollout of a national health literacy program as a quasi-experiment, we
+apply a difference-in-differences design to the universe data of medical malpractice litigation. We find the policy reduced litigation by 32%. Mechanism analysis shows the program
+enhanced residents’ health human capital and physician trust, thereby mitigating information asymmetries and filtering out weak or unfounded disputes.
+                        </p>
+                        <p class="lang-zh hidden">
+                            <strong>Abstract:</strong> Medical malpractice litigation imposes substantial economic and social costs. We ask whether
+a demand-side investment in patient health literacy can mitigate this conflict. Exploiting
+China’s staggered rollout of a national health literacy program as a quasi-experiment, we
+apply a difference-in-differences design to the universe data of medical malpractice litigation. We find the policy reduced litigation by 32%. Mechanism analysis shows the program
+enhanced residents’ health human capital and physician trust, thereby mitigating information asymmetries and filtering out weak or unfounded disputes.
+                        </p>
+                    </div>
                 </li>
-                
             </ul>
         </section>
 
@@ -191,8 +268,7 @@
             <h2 class="lang-zh hidden">正在进行的研究</h2>
             <ul class="paper-list">
                 <li>
-                    <span class="paper-title">Fishing for Fines: Local Government Fiscal Stress and Cross-Jurisdictional
-                        Enforcement in China</span>
+                    <span class="paper-title">Fishing for Fines: Local Government Fiscal Stress and Cross-Jurisdictional Enforcement in China</span>
                     <div class="paper-meta">
                         <span class="lang-en">with Shiyu Bo.</span>
                         <span class="lang-zh hidden">合作者：薄诗雨。</span>
@@ -200,22 +276,19 @@
                 </li>
                 
                 <li>
-                    <span class="paper-title">Procurement as Defensive Practice: Litigation Risk and Hospital Behavior
-                        in China</span>
+                    <span class="paper-title">Procurement as Defensive Practice: Litigation Risk and Hospital Behavior in China</span>
                     <div class="paper-meta">
                         <span class="lang-en">with Shiyu Bo, Yaxuan Mei, and Zichen Wang.</span>
                         <span class="lang-zh hidden">合作者：薄诗雨, 梅亚璇, 王子琛。</span>
                     </div>
                 </li>
                 <li>
-                    <span class="paper-title">Erasing Borders to Erase Crime? Evidence from China's Jurisdictional
-                        Consolidation</span>
+                    <span class="paper-title">Erasing Borders to Erase Crime? Evidence from China's Jurisdictional Consolidation</span>
                     <div class="paper-meta">
                         <span class="lang-en">with Shiyu Bo and Yi Wang.</span>
                         <span class="lang-zh hidden">合作者：薄诗雨, 王祎。</span>
                     </div>
                 </li>
-                
             </ul>
         </section>
 
@@ -256,16 +329,40 @@
     </div>
 
     <script>
+        // 语言切换功能
         function toggleLang() {
             const ens = document.querySelectorAll('.lang-en');
             const zhs = document.querySelectorAll('.lang-zh');
             ens.forEach(el => el.classList.toggle('hidden'));
             zhs.forEach(el => el.classList.toggle('hidden'));
         }
+
+        // 新增：摘要收缩功能
+        function toggleAbstract(btn) {
+            // 找到按钮紧跟着的下一个元素（即 abstract-content）
+            const content = btn.nextElementSibling;
+            
+            // 检查当前是否是隐藏状态
+            const isHidden = content.style.display === "none" || content.style.display === "";
+
+            // 切换显示状态
+            content.style.display = isHidden ? "block" : "none";
+
+            // 切换按钮文字 ([+] -> [-])，同时兼顾中英文
+            const enSpan = btn.querySelector('.lang-en');
+            const zhSpan = btn.querySelector('.lang-zh');
+
+            if (isHidden) {
+                // 展开状态
+                if(enSpan) enSpan.textContent = "[-] Abstract";
+                if(zhSpan) zhSpan.textContent = "[-] 摘要";
+            } else {
+                // 收起状态
+                if(enSpan) enSpan.textContent = "[+] Abstract";
+                if(zhSpan) zhSpan.textContent = "[+] 摘要";
+            }
+        }
     </script>
 </body>
 
 </html>
-
-
-
